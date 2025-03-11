@@ -1,0 +1,222 @@
+{% extends 'computing_admission/base_computing.html' %}
+
+
+{% block hi %}
+
+<head> 
+    <style>
+    body {
+        background-color: #1E1E2E;
+        color: #F8F9FA;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .container {
+        background: #27293D;
+        border-radius: 20px;
+        padding-left: 20PX;
+        padding-right: 20PX;
+        width: 100%;
+        max-width: 1000px;
+        max-height: 100vh;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    h2 {
+        text-align: center;
+        color: #4ECDC4;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #4ECDC4;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #4ECDC4;
+        border-radius: 8px;
+        background: #323450;
+        color: #F8F9FA;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    input[type="file"] {
+        padding: 3px;
+    }
+    button {
+        background-color: #FF6B6B;
+        color: #F8F9FA;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        transition: background 0.3s ease;
+    }
+    button:hover {
+        background-color: #4ECDC4;
+        color: #1E1E2E;
+    }
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #6C757D;
+        color: #FFF;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }     
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>BLOCK TECHNOLOGY Admission Form</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" maxlength="225" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" maxlength="1000" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar_number">Aadhar Number</label>
+                <input type="text" id="aadhar_number" name="aadhar_number" maxlength="15">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo">
+            </div>
+
+            <div class="form-group">
+                <label for="date_of_admission">Date of Admission</label>
+                <input type="datetime-local" id="date_of_admission" name="date_of_admission" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenth_id_number">10th ID Number</label>
+                <input type="text" id="tenth_id_number" name="tenth_id_number" maxlength="20" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenth_percentage">10th Percentage</label>
+                <input type="number" step="0.01" id="tenth_percentage" name="tenth_percentage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenth_marks_sheet">10th Marks Sheet</label>
+                <input type="file" id="tenth_marks_sheet" name="tenth_marks_sheet">
+            </div>
+
+            <div class="form-group">
+                <label for="twelfth_id_number">12th ID Number</label>
+                <input type="text" id="twelfth_id_number" name="twelfth_id_number" maxlength="20" required>
+            </div>
+
+            <div class="form-group">
+                <label for="twelfth_percentage">12th Percentage</label>
+                <input type="number" step="0.01" id="twelfth_percentage" name="twelfth_percentage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="twelfth_marks_sheet">12th Marks Sheet</label>
+                <input type="file" id="twelfth_marks_sheet" name="twelfth_marks_sheet">
+            </div>
+
+            <div class="form-group">
+                <label for="father_name">Father's Name</label>
+                <input type="text" id="father_name" name="father_name" maxlength="225" required>
+            </div>
+
+            <div class="form-group">
+                <label for="father_email">Father's Email</label>
+                <input type="email" id="father_email" name="father_email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="father_occupation">Father's Occupation</label>
+                <input type="text" id="father_occupation" name="father_occupation" maxlength="225" required>
+            </div>
+
+            <div class="form-group">
+                <label for="father_phone">Father's Phone</label>
+                <input type="text" id="father_phone" name="father_phone" maxlength="20" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mother_name">Mother's Name</label>
+                <input type="text" id="mother_name" name="mother_name" maxlength="225" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mother_occupation">Mother's Occupation</label>
+                <input type="text" id="mother_occupation" name="mother_occupation" maxlength="225" required>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+  
+
+
+{% endblock hi %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUINFO</title>
+    <style>
+        body {
+            background-color: #1E1E2E;
+            color: #F8F9FA;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .sidebar {
+            width: 260px;
+            background-color: #27293D;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100vh;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #4ECDC4;
+            border-radius: 4px;
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+            color: #4ECDC4;
+            margin-bottom: 20px;
+        }
+        
+        .menu-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #4ECDC4;
+            border-bottom: 2px solid #FF6B6B;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        a.menu-item {
+            display: block;
+            padding: 12px 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #F8F9FA;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 500;
+        }
+        
+        a.menu-item:hover {
+            background-color: #4ECDC4;
+            color: #1E1E2E;
+            transform: scale(1.05);
+        }
+        
+        a.menu-item.active {
+            background-color: #FF6B6B;
+            color: #1E1E2E;
+            font-weight: bold;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #27293D;
+        }
+        
+        .card {
+            background: #27293D;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4ECDC4;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4ECDC4;
+            border-radius: 5px;
+            background-color: #1E1E2E;
+            color: #F8F9FA;
+        }
+        
+        .btn {
+            background-color: #FF6B6B;
+            color: #F8F9FA;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #4ECDC4;
+            color: #1E1E2E;
+            box-shadow: 0 0 15px #4ECDC4;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>College Admin</h2>
+        <div class="menu-title">Departments</div>
+        <a href="/p" class="menu-item active">Computer Science</a>
+        <a href="/AIML_ADMISSION_EXPLORE_SCHOOLS/" class="menu-item">AIML</a>
+        <a href="/Software_Engineering_explore/" class="menu-item ">Software Engineering</a>
+        <a href="/Data_Sciences_explore/" class="menu-item">Data Science</a>
+        <a href="/admission_cybersecurity",views.admission_cybersecurity,name="admission_cybersecurity" class="menu-item">Cybersecurity</a>
+        <a href="/admision_block_techonogly" class="menu-item">Blockchain Technology</a>
+        <a href="/admission_internet_of_things" class="menu-item">Internet of Things</a>
+        <a href="/admission_cloud_computing" class="menu-item">Cloud Computing</a>
+        <a href="/admission_computer_networks" class="menu-item">Computer Networks</a>
+    </div>
+    
+    {% block hi %}
+        
+    {% endblock hi %}
+        
+</body>
+</html>

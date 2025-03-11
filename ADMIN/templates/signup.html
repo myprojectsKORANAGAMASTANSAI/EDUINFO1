@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUINFO</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1E1E2E;
+            color: #F8F9FA;
+        }
+
+        /* Login Card */
+        .login-container {
+            background: #27293D;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(255, 107, 107, 0.3);
+            text-align: center;
+            width: 320px;
+        }
+
+        h2 {
+            color: #4ECDC4;
+            margin-bottom: 15px;
+        }
+
+        /* Inputs & Select */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #1E1E2E;
+            color: #F8F9FA;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        input::placeholder {
+            color: #B0B3C0;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #FF6B6B;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #E63946;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Genator the email and password</h2>
+        <form action="/user_authentication/" method="POST">
+            {% csrf_token %}
+            <select name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Student">Student</option>
+                <option value="Staff">Staff</option>
+            </select>
+            <input type="text" name="username" placeholder="email" required>
+            <input type="password" name="password" placeholder="Password" value="Test@124" required>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+</body>
+</html>

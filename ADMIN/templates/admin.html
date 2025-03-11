@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUINFO</title>
+    <style>
+        body {
+            background-color: #1E1E2E;
+            color: #F8F9FA;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: #27293D;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100vh;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #4ECDC4;
+            border-radius: 4px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: #4ECDC4;
+            margin-bottom: 20px;
+        }
+
+        .menu-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #4ECDC4;
+            border-bottom: 2px solid #FF6B6B;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        a.menu-item {
+            display: block;
+            padding: 12px 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #F8F9FA;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 500;
+        }
+
+        a.menu-item:hover {
+            background-color: #4ECDC4;
+            color: #1E1E2E;
+            transform: scale(1.05);
+        }
+
+        a.menu-item.active {
+            background-color: #FF6B6B;
+            color: #1E1E2E;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .card {
+            background: #27293D;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+        }
+
+        .btn {
+            background-color: #FF6B6B;
+            color: #F8F9FA;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4ECDC4;
+            color: #1E1E2E;
+            box-shadow: 0 0 15px #4ECDC4;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stats .card {
+            flex: 1 1 calc(33.33% - 15px);
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            color: #4ECDC4;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>College Admin</h2>
+
+        <div class="menu-title">Main Menu</div>
+        <a href="#" class="menu-item active">Dashboard</a>
+        <a href="/admission_EXPLORE_SCHOOLS/" class="menu-item">Admission Management</a>
+        <a href="/user_authentication" class="menu-item">User Authentication</a>
+        <a href="#" class="menu-item">Student Details</a>
+        <a href="#" class="menu-item">Faculty Details</a>
+        <a href="#" class="menu-item">Course Management</a>
+
+        <div class="menu-title">Academic Management</div>
+        <a href="#" class="menu-item">Exam Scheduling</a>
+        <a href="#" class="menu-item">Results Management</a>
+        <a href="#" class="menu-item">Classroom Timetables</a>
+
+        <div class="menu-title">Infrastructure Management</div>
+        <a href="#" class="menu-item">Library Management</a>
+        <a href="#" class="menu-item">Hostel Management</a>
+        <a href="#" class="menu-item">Transport Management</a>
+
+        <div class="menu-title">Financial Management</div>
+        <a href="#" class="menu-item">Fee Management</a>
+        <a href="#" class="menu-item">Scholarships & Grants</a>
+
+        <div class="menu-title">Analytics & Security</div>
+        <a href="#" class="menu-item">Reports & Analytics</a>
+        <a href="#" class="menu-item">Security & Compliance</a>
+    </div>
+
+    <div class="content">
+        <div class="stats">
+            <div class="card"><h3>Total Students</h3><p>3,200</p></div>
+            <div class="card"><h3>Total Faculty</h3><p>450</p></div>
+            <div class="card"><h3>Ongoing Courses</h3><p>150</p></div>
+            <div class="card"><h3>Available Books</h3><p>18,500</p></div>
+            <div class="card"><h3>Hostel Capacity</h3><p>1,200</p></div>
+            <div class="card"><h3>Events Scheduled</h3><p>20+</p></div>
+        </div>
+
+        <div class="card">
+            <h3>Dashboard Overview</h3>
+            <p>Welcome to the College Admin Panel. Manage admissions, student records, and campus resources efficiently.</p>
+            <button class="btn">Explore Features</button>
+        </div>
+    </div>
+</body>
+</html>

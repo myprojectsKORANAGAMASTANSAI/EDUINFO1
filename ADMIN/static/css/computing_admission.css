@@ -1,0 +1,95 @@
+/* Midnight Glow Theme */
+body {
+    background-color: #1E1E2E;
+    color: #F8F9FA;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    color: #FF6B6B;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #27293D;
+    padding: 25px;
+    border-radius: 12px;
+    width: 600px;
+}
+
+/* Flexbox Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Columns inside row */
+.column {
+    width: 48%;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #4ECDC4;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1E1E2E;
+    color: #F8F9FA;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #FF6B6B;
+    color: #F8F9FA;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #E05A5A;
+}
+
+/* Input focus effect */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 1px solid #4ECDC4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 640px) {
+    form {
+        width: 90%;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+    }
+}
