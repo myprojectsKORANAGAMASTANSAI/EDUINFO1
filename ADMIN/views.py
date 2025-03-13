@@ -101,3 +101,4 @@ def admission_cloud_computing(request):
 @login_required
 def admission_computer_networks(request):
     return render(request,"computing_admission/computer_networks.html")
+
