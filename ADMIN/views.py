@@ -85,7 +85,7 @@ def admiss_Data_Sciences(request):
 
 @login_required
 def admission_cybersecurity(request):
-    return render(request, 'computing_admission/Cybersecurity.html')
+    return render(request, 'computing_admission/cybersecurity.html')
 
 @login_required
 def admision_block_techonogly(request):
